@@ -34,6 +34,10 @@ okta-iam-portfolio/
 
 Standalone lab exercises are documented in the [`/labs`](./labs/) directory and added as completed. Each lab includes objective, configuration steps, screenshots, and key takeaways.
 
+| # | Lab Title | Topics | Status |
+|---|---|---|---|
+| 01 | [Okta Network Security Policies](labs/network-security-policies/README.md) | IP Zones, Dynamic Zones, Auth Policies, MFA | ✅ Complete |
+
 ---
 
 ## 🛠️ Environment
