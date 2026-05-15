@@ -141,19 +141,17 @@ Okta Identity Governance (OIG) is enabled in this lab environment. Access Certif
 
 ## Screenshots
 
-> Screenshots folder: `/assets/project-01/`
-
-- `01-users-active.png` — All 6 TechNova users Active in Okta directory
-- `02-groups-created.png` — Engineering-Staff, HR-Staff, Sales-Staff groups
-- `03-user-profile-dept.png` — User profile showing Department and Title attributes
-- `04-workflow-flows-on.png` — All 4 Workflows flows enabled
-- `05-group-rules-table.png` — Group Rules table with department mappings
-- `06-joiner-execution-success.png` — Workflow execution history showing Success
-- `07-engineering-staff-members.png` — Engineering-Staff with James Carter and Priya Nair
-- `08-hr-staff-members.png` — HR-Staff with Marcus Webb and Aisha Okonkwo
-- `09-sales-staff-members.png` — Sales-Staff with Derek Huang and Sofia Reyes
-- `10-mover-before.png` — Derek Huang in Sales-Staff before role change
-- `11-mover-after.png` — Derek Huang in Engineering-Staff after workflow ran
-- `12-leaver-before.png` — Sofia Reyes status Active
-- `13-leaver-after.png` — Sofia Reyes status Deactivated
-- `14-oig-access-certifications.png` — OIG Access Certifications module enabled
+ ![Users Active](../../01-users-active.png)
+ ![Groups Created](../../02-groups-created.png)
+ ![User Profile](../../03-user-profile-dept.png)
+ ![Workflows ON](../../04-workflow-flows-on.png)
+ ![Group Rules Table](../../05-group-rules-table.png)
+ ![Joiner Execution](../../06-joiner-execution-success.png)
+ ![Engineering Staff](../../07-engineering-staff-members.png)
+ ![HR Staff](../../08-hr-staff-members.png)
+ ![Sales Staff](../../09-sales-staff-members.png)
+ ![Mover Before](../../10-mover-before.png)
+ ![Mover After](../../11-mover-after.png)
+ ![Leaver Before](../../12-leaver-before.png)
+ ![Leaver After](../../13-leaver-after.png)
+ ![OIG Certifications](../../14-oig-access-certifications.png)
