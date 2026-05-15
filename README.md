@@ -21,22 +21,16 @@ okta-iam-portfolio/
 
 ---
 
-## 📁 Projects
-
-| # | Project | Core Skills | Status |
-|---|---------|-------------|--------|
-| 01 | [IAM Lifecycle Automation & Access Governance](./projects/project-01-lifecycle-automation/) | Okta Workflows, JML, RBAC, OIG Access Reviews | 🔄 In Progress |
-| 02 | [Enterprise SSO, MFA & SCIM Provisioning](./projects/project-02-sso-mfa-scim/) | SAML/OIDC, Adaptive MFA, SCIM, Sign-On Policies | 🔄 In Progress |
+| # | Project | Core Skills |
+|---|---------|-------------|
+| 01 | [IAM Lifecycle Automation & Access Governance](./projects/project-01-lifecycle-automation/) | Okta Workflows, JML, RBAC, OIG Access Reviews |
+| 02 | [Enterprise SSO, MFA & SCIM Provisioning](./projects/project-02-sso-mfa-scim/) | SAML/OIDC, Adaptive MFA, SCIM, Sign-On Policies |
 
 ---
 
-## 🧪 Labs
-
-Standalone lab exercises are documented in the [`/labs`](./labs/) directory and added as completed. Each lab includes objective, configuration steps, screenshots, and key takeaways.
-
-| # | Lab Title | Topics | Status |
-|---|---|---|---|
-| 01 | [Okta Network Security Policies](labs/network-security-policies/README.md) | IP Zones, Dynamic Zones, Auth Policies, MFA | ✅ Complete |
+| # | Lab Title | Topics |
+|---|-----------|--------|
+| 01 | [Okta Network Security Policies](./labs/network-security-policies/) | IP Zones, Dynamic Zones, Auth Policies, MFA |
 
 ---
 
