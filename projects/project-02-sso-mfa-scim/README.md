@@ -1,4 +1,4 @@
-# Project 02 — Enterprise SSO, MFA & SCIM Provisioning
+# Enterprise SSO, MFA & SCIM Provisioning
 
 ## Overview
 
