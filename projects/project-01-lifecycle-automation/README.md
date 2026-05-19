@@ -100,8 +100,6 @@ Created a realistic employee directory with 6 test users across 3 departments, a
 
 **Screenshots:**
 
-![Engineering Staff](screenshots/07-engineering-staff-members.png)
-![HR Staff](screenshots/08-hr-staff-members.png)
 ![Sales Staff](screenshots/09-sales-staff-members.png)
 ![Mover Before](screenshots/10-mover-before.png)
 ![Mover After](screenshots/11-mover-after.png)
