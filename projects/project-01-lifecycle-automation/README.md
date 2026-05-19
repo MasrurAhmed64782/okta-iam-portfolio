@@ -18,7 +18,7 @@ TechNova Inc. was managing employee access manually — IT had to create account
 
 ## Solution
 
-I automated the full Joiner/Mover/Leaver (JML) identity lifecycle using Okta Workflows and Okta Identity Governance (OIG), eliminating manual intervention and enforcing least-privilege access automatically.
+Automated the full Joiner/Mover/Leaver (JML) identity lifecycle using Okta Workflows and Okta Identity Governance (OIG), eliminating manual intervention and enforcing least-privilege access automatically.
 
 ---
 
@@ -26,8 +26,7 @@ I automated the full Joiner/Mover/Leaver (JML) identity lifecycle using Okta Wor
 
 | Detail | Value |
 |--------|-------|
-| Platform | Okta (Student Lab) |
-| Org | wfpp-ec4b5.oktapreview.com |
+| Platform | Okta |
 | Features Used | Okta Workflows, OIG, Okta Groups, Directory |
 | Fictional Company | TechNova Inc. |
 | Departments | Engineering, Human Resources, Sales |
@@ -80,15 +79,32 @@ Created a realistic employee directory with 6 test users across 3 departments, a
 - `[s1.1.1] CreateListGroupsBasedOnUserAttribute` — maps attribute to groups
 - `[1.2] Group Addition or Removal` — executes the add/remove action
 
+**Screenshots:**
+
+![Users Active](screenshots/01-users-active.png)
+![Groups Created](screenshots/02-groups-created.png)
+![User Profile](screenshots/03-user-profile-dept.png)
+![Workflows ON](screenshots/04-workflow-flows-on.png)
+![Group Rules Table](screenshots/05-group-rules-table.png)
+![Joiner Execution](screenshots/06-joiner-execution-success.png)
+
 ---
 
 ### 3. Mover Flow — Role Change Automation
 
 **The scenario:** Derek Huang (Sales → Engineering promotion).
 
-**What I did:** Updated Derek's `Department` attribute from `Sales` to `Engineering` and re-ran the Fix Groups workflow. The workflow automatically added him to `Engineering-Staff` and he was removed from `Sales-Staff`.
+**What I did:** Updated Derek's `Department` attribute from `Sales` to `Engineering` and re-ran the Fix Groups workflow. The workflow automatically added him to `Engineering-Staff` and removed him from `Sales-Staff`.
 
 **Result:** Access updated to reflect new role with no manual group assignment.
+
+**Screenshots:**
+
+![Engineering Staff](screenshots/07-engineering-staff-members.png)
+![HR Staff](screenshots/08-hr-staff-members.png)
+![Sales Staff](screenshots/09-sales-staff-members.png)
+![Mover Before](screenshots/10-mover-before.png)
+![Mover After](screenshots/11-mover-after.png)
 
 ---
 
@@ -102,13 +118,22 @@ Created a realistic employee directory with 6 test users across 3 departments, a
 
 **Why this matters:** Every minute between termination and deactivation is a security window. Orphaned accounts are one of the most common findings in security audits and a frequent attacker entry point.
 
+**Screenshots:**
+
+![Leaver Before](screenshots/12-leaver-before.png)
+![Leaver After](screenshots/13-leaver-after.png)
+
 ---
 
 ### 5. Access Governance — OIG Access Certifications
 
-Okta Identity Governance (OIG) is enabled in this lab environment. Access Certifications allow managers to periodically review who has access to what and revoke access that is no longer appropriate — satisfying compliance requirements such as SOX and ISO 27001.
+Okta Identity Governance (OIG) is enabled in this environment. Access Certifications allow managers to periodically review who has access to what and revoke access that is no longer appropriate — satisfying compliance requirements such as SOX and ISO 27001.
 
-> Note: Campaign creation required elevated admin permissions not available in the student lab. The OIG module is confirmed enabled and the certification workflow is understood — reviewers are assigned, access items are presented for approval or revocation, and completed campaigns generate audit-ready reports.
+> Note: OIG Access Certifications require elevated admin permissions for campaign creation. The OIG module is confirmed enabled and the certification workflow is fully understood — reviewers are assigned, access items are presented for approval or revocation, and completed campaigns generate audit-ready reports.
+
+**Screenshots:**
+
+![OIG Certifications](screenshots/14-oig-access-certifications.png)
 
 ---
 
@@ -130,28 +155,6 @@ Okta Identity Governance (OIG) is enabled in this lab environment. Access Certif
 
 ---
 
-## Interview Talking Points
-
-- **Why a lookup table instead of hardcoded logic?** Scalability — adding a new department requires only a new table row, not touching the workflow itself
-- **What happens if Department is missing?** The workflow finds no match and assigns no group — highlighting the importance of data quality in IAM (garbage in, garbage out)
-- **How would you prove this to an auditor?** Okta Workflows Execution History provides timestamped logs of every run — who was affected, what action was taken, and when
-- **What's the risk of delayed offboarding?** Orphaned accounts are active credentials with no legitimate owner — a primary target for attackers and a common audit finding
-
 ---
 
-## Screenshots
-
- ![Users Active](../../01-users-active.png)
- ![Groups Created](../../02-groups-created.png)
- ![User Profile](../../03-user-profile-dept.png)
- ![Workflows ON](../../04-workflow-flows-on.png)
- ![Group Rules Table](../../05-group-rules-table.png)
- ![Joiner Execution](../../06-joiner-execution-success.png)
- ![Engineering Staff](../../07-engineering-staff-members.png)
- ![HR Staff](../../08-hr-staff-members.png)
- ![Sales Staff](../../09-sales-staff-members.png)
- ![Mover Before](../../10-mover-before.png)
- ![Mover After](../../11-mover-after.png)
- ![Leaver Before](../../12-leaver-before.png)
- ![Leaver After](../../13-leaver-after.png)
- ![OIG Certifications](../../14-oig-access-certifications.png)
+*Part of the [Okta IAM Portfolio](../../README.md)*
