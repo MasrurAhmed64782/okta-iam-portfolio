@@ -1,4 +1,4 @@
-# — Enterprise SSO, MFA & SCIM Provisioning
+# Project 02 — Enterprise SSO, MFA & SCIM Provisioning
 
 ## Overview
 
@@ -47,6 +47,12 @@ Configured federated Single Sign-On between Okta and Salesforce using the SAML 2
 
 **Outcome:** Users authenticate through Okta and are granted federated access to Salesforce without a separate Salesforce login.
 
+**Screenshots:**
+
+![SAML Configuration I](screenshots/phase-01-saml/01-saml-configuration%20i.png)
+![SAML Configuration II](screenshots/phase-01-saml/01-saml-configuration%20ii.png)
+![SAML Configuration III](screenshots/phase-01-saml/01-saml-configuration%20iii.png)
+
 ---
 
 ### Phase 2 — OIDC SSO Integration ✅
@@ -61,6 +67,12 @@ Implemented OpenID Connect (OIDC) as a modern OAuth 2.0-based authentication alt
 
 **Outcome:** Demonstrated OIDC-based authentication flow as a complement to SAML, reflecting current industry direction toward OAuth 2.0-based identity protocols.
 
+**Screenshots:**
+
+![OIDC Configuration I](screenshots/phase-02-oidc/02-oidc-configuration%20i.png)
+![OIDC Configuration II](screenshots/phase-02-oidc/02-oidc-configuration%20ii.png)
+![OIDC Configuration III](screenshots/phase-02-oidc/02-oidc-configuration%20iii.png)
+
 ---
 
 ### Phase 3 — MFA & Adaptive Authentication Policies ✅
@@ -74,6 +86,13 @@ Designed and enforced adaptive MFA policies using Okta's Authentication Policy f
 - Validated policy enforcement across different user group assignments
 
 **Outcome:** Demonstrated conditional access enforcement where authentication requirements adapt based on user group membership and application sensitivity.
+
+**Screenshots:**
+
+![MFA Policy I](screenshots/phase-03-mfa/03-saml-sso-success%20i.png)
+![MFA Policy II](screenshots/phase-03-mfa/03-saml-sso-success%20ii.png)
+![MFA Policy III](screenshots/phase-03-mfa/03-saml-sso-success%20iii.png)
+![MFA Policy IV](screenshots/phase-03-mfa/03-saml-sso-success%20iv.png)
 
 ---
 
@@ -129,6 +148,14 @@ Performed independent credential validation against the Salesforce org to determ
 Evidence from Postman testing — where `invalid_client_id` is returned even with freshly generated credentials — suggests the issue originates on the Salesforce Developer Edition side rather than in Okta's provisioning configuration. Salesforce Developer Edition orgs have known OAuth restrictions that may prevent external SCIM clients from authenticating via the standard OAuth 2.0 flow.
 
 **Root cause confirmed.** Paul S. (Okta Employee, Okta Community) responded: *"In the past I was able to enable Provisioning from a Salesforce Developer account, however if they changed anything I can't say for sure. I would recommend to check with them if there are any restrictions."* This confirms the issue originates from a change on Salesforce Developer Edition's side, not from the Okta configuration. All Okta-side settings were verified as correct.
+
+**Screenshots:**
+
+![SCIM Error I](screenshots/phase-04-scim/04-scim-credentials-error%20i.png)
+![SCIM Error II](screenshots/phase-04-scim/04-scim-credentials-error%20ii.png)
+![SCIM Error III](screenshots/phase-04-scim/04-scim-credentials-error%20iii.png)
+![SCIM Error IV](screenshots/phase-04-scim/04-scim-credentials-error%20iv.png)
+![SCIM Error V](screenshots/phase-04-scim/04-scim-credentials-error%20v.png)
 
 ---
 
