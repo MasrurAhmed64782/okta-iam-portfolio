@@ -1,4 +1,4 @@
-# Okta IAM Portfolio — Masur Ahmed
+# Okta IAM Portfolio — Masrur Ahmed
 
 ![Platform](https://img.shields.io/badge/Platform-Okta-blue) ![Domain](https://img.shields.io/badge/Domain-Identity%20%26%20Access%20Management-brightgreen) ![Status](https://img.shields.io/badge/Status-Active-success)
 
@@ -49,7 +49,8 @@ okta-iam-portfolio/
 | Certification | Status |
 |---------------|--------|
 | Okta Certified Professional | ✅ Passed |
-| Okta Certified Administrator | 🔄 In Progress |
+| Okta Certified Administrator | ✅ Passed |
+| Okta Certified Developer | ✅ Passed |
 
 ---
 
