@@ -118,6 +118,29 @@ Created a realistic employee directory with 6 test users across 3 departments, a
 
 **Known limitation / future enhancement:** Currently triggered on-demand rather than automatically. A production version would use a Microsoft Graph webhook subscription or scheduled poll to detect disables in Entra and trigger the flow automatically.
 
+**Screenshots:**
+
+![Unfiltered response — bug in action](screenshots/leaver-01-unfiltered-response.webp)
+*Before fix: Query field returns all users instead of filtering to one — root cause of the wrong-user bug.*
+
+![Query field bug — root cause](screenshots/leaver-02-query-field-bug.webp)
+*Root cause: connector's Query field was set to Text mode, so the filter was never sent as a real query parameter.*
+
+![Filter fix applied](screenshots/leaver-03-filter-fix.webp)
+*Fix: Compose card rebuilt to output a proper query string, wired directly into the Query field.*
+
+![Single match success](screenshots/leaver-04-single-match-success.webp)
+*After fix: Get card returns exactly one user (Priya Nair), Patch succeeds with a 204.*
+
+![Entra ID account disabled](screenshots/leaver-05-entra-disabled.webp)
+*Confirmed in Entra ID: Priya Nair's account status changed from Enabled to Disabled.*
+
+![Safety check — zero matches](screenshots/leaver-06-safety-check-fail.webp)
+*Safety check test: a non-existent user returns zero matches, and the flow correctly stops instead of proceeding.*
+
+![Safety check — valid match](screenshots/leaver-07-safety-check-pass.webp)
+*Safety check test: a valid single match passes the check and the flow proceeds normally to disable the account.*
+
 ### 5. Access Governance — OIG Access Certifications
 
 Okta Identity Governance (OIG) is enabled in this environment. Access Certifications allow managers to periodically review who has access to what and revoke access that is no longer appropriate — satisfying compliance requirements such as SOX and ISO 27001.
