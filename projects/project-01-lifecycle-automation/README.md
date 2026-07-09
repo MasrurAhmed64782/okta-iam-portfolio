@@ -106,22 +106,17 @@ Created a realistic employee directory with 6 test users across 3 departments, a
 
 ---
 
-### 4. Leaver Flow — Secure Offboarding
+### 4. Leaver Flow — Automated Deprovisioning via Microsoft Graph API
 
-**The scenario:** Sofia Reyes leaves TechNova.
+**Design decision:** Originally scoped as app-assignment-driven deactivation (revoking Salesforce access to trigger downstream deprovisioning via SCIM), this required a live SCIM-connected backend not available in this free-tier lab. Pivoted to a direct Microsoft Graph API disable as the implemented approach.
 
-**What I did:** Deactivated Sofia's Okta account immediately via the Admin Console.
+**What I built:** A standalone Okta Workflow (`JML - Leaver (Terminate)`), triggered On Demand with a `displayName` input. The flow queries Microsoft Graph to locate the target user, then sends a `PATCH` request to disable their account (`accountEnabled: false`) — with a safety check that verifies exactly one user matches before allowing the disable to proceed.
 
-**Result:** Account status changed from `Active` to `Deactivated` — all access revoked instantly. No orphaned account risk.
+**Bug found and fixed:** The Graph API `$filter` query parameter was initially sent as a stringified JSON blob instead of an actual query parameter, causing Graph to silently ignore the filter and return every user in the tenant. Since the flow took the first result by default, this disabled the wrong account. Fixed by rebuilding the filter as a proper query string fed directly into the connector's Query field, and added a match-count safety check as a result of this bug.
 
-**Why this matters:** Every minute between termination and deactivation is a security window. Orphaned accounts are one of the most common findings in security audits and a frequent attacker entry point.
+**Result:** Verified end-to-end — correctly disables the intended user only when exactly one match is found (confirmed via Entra ID account status: Enabled → Disabled), and correctly refuses to act when zero matches are found.
 
-**Screenshots:**
-
-![Leaver Before](screenshots/12-leaver-before.png)
-![Leaver After](screenshots/13-leaver-after.png)
-
----
+**Known limitation / future enhancement:** Currently triggered on-demand rather than automatically. A production version would use a Microsoft Graph webhook subscription or scheduled poll to detect disables in Entra and trigger the flow automatically.
 
 ### 5. Access Governance — OIG Access Certifications
 
@@ -141,7 +136,7 @@ Okta Identity Governance (OIG) is enabled in this environment. Access Certificat
 |-----------|------|--------|--------|
 | Joiner | All 6 users | Workflow run | Auto-assigned to correct department group |
 | Mover | Derek Huang | Department changed Sales → Engineering | Moved to Engineering-Staff |
-| Leaver | Sofia Reyes | Account deactivated | Status: Deactivated, access revoked |
+| Leaver | Priya Nair | Disabled via Graph API (on-demand trigger) | Status: Disabled, verified in Entra ID |
 
 ---
 
