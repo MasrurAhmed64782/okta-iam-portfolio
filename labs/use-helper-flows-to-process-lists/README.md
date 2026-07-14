@@ -95,13 +95,13 @@ For Each row → calls Helper Flow
 
 All four flows tested end-to-end in a live Okta org, confirming the full automation loop functions correctly:
 
-![Event Flow Execution — User Added to Group](images/01-user-added-to-group-execution.png)
+![Event Flow Execution — User Added to Group](01-user-added-to-group-execution.webp)
 
-![Helper Flow Execution — Difference, Continue If, Remove, Update](images/02-helper-flow-execution.png)
+![Helper Flow Execution — Difference, Continue If, Remove, Update](02-helper-flow-execution.webp)
 
-![MFA Exempt Users Table — Before and After Removal](images/03-table-before-after.png)
+![MFA Exempt Users Table — Before and After Removal](03-table-before-after.webp)
 
-![Okta Group Membership Confirmed Empty After Removal](images/04-group-membership-removed.png)
+![Okta Group Membership Confirmed Empty After Removal](04-group-membership-removed.webp)
 
 **Verification steps performed:**
 1. Added a test account to the MFA Exempt Users group — confirmed the logging flow created a table row with `Removed = false`
