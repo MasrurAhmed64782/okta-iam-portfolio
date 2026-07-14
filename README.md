@@ -34,6 +34,7 @@ okta-iam-portfolio/
 |---|-----------|--------|
 | 01 | [Okta Network Security Policies](labs/network-security-policies/) | IP Zones, Dynamic Zones, Auth Policies, MFA |
 | 02 | [Use Helper Flows to Process Lists](labs/use-helper-flows-to-process-lists/) | Okta Workflows, Helper Flows, Scheduled Flows, Tables |
+| 03 | [Use Custom API Action (CAPIA) Cards](labs/use-custom-api-action-capia-cards/) | Okta Workflows, Custom API Actions, API Scopes, Role Assignment |
 
 ---
 
