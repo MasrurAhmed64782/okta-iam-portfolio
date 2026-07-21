@@ -37,6 +37,7 @@ okta-iam-portfolio/
 | 03 | [Use Custom API Action (CAPIA) Cards](labs/use-custom-api-action-capia-cards/) | Okta Workflows, Custom API Actions, API Scopes, Role Assignment |
 | 04 | [Sign in Your Users and Secure Sessions with Okta](labs/sign-in-users-and-secure-sessions/) | SPA Integration, Group-Based RBAC, Redirect Model, Authentication Policies |
 | 05 | [Brand Your Okta Customer Identity Experience](labs/brand-your-oci-experience/) | Brands API, Theme Customization, API-Based Configuration Management |
+| 06 | [Implement B2C Self-Service Registration with Okta](labs/implement-b2c-self-service-registration/) | Self-Service Registration, Profile Editor, Authenticator Policies, Registration Inline Hooks |
 
 ---
 
