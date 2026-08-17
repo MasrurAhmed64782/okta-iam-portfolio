@@ -56,6 +56,7 @@ okta-iam-portfolio/
 | Okta Certified Professional | ✅ Passed |
 | Okta Certified Administrator | ✅ Passed |
 | Okta Certified Developer | ✅ Passed |
+| Okta Certified Workflows - Specialty | ✅ Passed |
 
 ---
 
